@@ -17,17 +17,17 @@ public class ProducerDemo {
         // create producer properties
 
         Properties properties = new Properties();
-        properties.setProperties(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,bootstrapServers);
-        properties.setProperties(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
-        properties.setProperties(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG StringSerializer.class.getName());
+        properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,bootstrapServers);
+        properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+        properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
 
 
         // create the producer
-        KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties)
+        KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
 
         // producer record
-        ProducerRecord<String, String> record = new ProducerRecord<String, String>("First topic", "hello world");
+        ProducerRecord<String, String> record = new ProducerRecord<String, String>("first_topic", "hello world");
 
         // send data - asynchronous
         producer.send(record);
