@@ -14,19 +14,21 @@ tar -zxvf kafka_2.12-2.3.0.tgz
 ```
 2. Test
 ```
-cd kafka_2.12-2.3.0/
+cd /home/ubuntu/kafka_2.12-2.3.0/
 ./bin/kafka-topics.sh
 ```
 
 3. Configuration
 ```
-mkdir data/kafka data/zookeepee
+cd /home/ubuntu/kafka_2.12-2.3.0/
+mkdir data/kafka data/zookeepeer
 vi config/server.properties       # add data dir
 vi config/zookeeper.properties    # add data dir
 ```
 
 4. Start. We need one command per shell
 ```
+cd /home/ubuntu/kafka_2.12-2.3.0/
 kafka-server-start.sh config/server.properties
 zookeeper-server-start.sh config/zookeeper.properties
 ```
