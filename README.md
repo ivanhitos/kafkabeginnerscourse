@@ -38,3 +38,8 @@ zookeeper-server-start.sh config/zookeeper.properties
 kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic first_topic
 kafka-console-producer.sh --broker-list 127.0.0.1:9092 --topic first_topic
 ```
+
+5. Test java producer
+```
+java -jar kafkabeginnerscourse.jar
+```
