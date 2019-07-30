@@ -1,6 +1,5 @@
 # Default ignored files
 .idea
 /target
-/out
 *.DS_Store
 .gitignore
